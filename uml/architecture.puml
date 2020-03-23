@@ -6,6 +6,7 @@
 !include extractor.puml
 !include stream.puml
 !include mediasource.puml
+!include datasource.puml
 
 interface LoadControl
 interface ControlDispatcher
