@@ -8,10 +8,18 @@ package Stream
 package Decoder
 package Buffer
 package MediaCodec
+package MediaPeriod
+package Extractor
+package ExtractorInput
 
 Player <-- MediaSource
-Player <-- DataSource
 Player <-- Renderer
+MediaSource <-- DataSource
+MediaSource <-- MediaPeriod
+ExtractorInput <-- DataSource
+Extractor <-- ExtractorInput
+MediaPeriod <-- Extractor
+Stream <-- MediaPeriod
 
 Renderer <-- Stream
 Renderer <-- Decoder
