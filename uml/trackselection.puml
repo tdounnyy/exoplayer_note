@@ -1,0 +1,21 @@
+@startuml
+'The component of an {@link ExoPlayer} responsible for selecting tracks to be consumed by each of the player's {@link Renderer}s. The {@link DefaultTrackSelector} implementation should be suitable for most use cases.
+package trackselection {
+
+    abstract class TrackSelector
+    abstract class MappingTrackSelector
+    class DefaultTrackSelector
+
+    interface TrackSelection
+    abstract class BaseTrackSelection
+    class FixedTrackSelection
+    class AdaptiveTrackSelection
+
+
+    TrackSelector <|-- MappingTrackSelector
+    MappingTrackSelector <|-- DefaultTrackSelector
+    TrackSelection <|--BaseTrackSelection
+    BaseTrackSelection <|-- FixedTrackSelection
+    BaseTrackSelection <|-- AdaptiveTrackSelection
+}
+@enduml

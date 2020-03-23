@@ -9,6 +9,7 @@
 !include datasource.puml
 !include source_misc.puml
 !include loadcontrol.puml
+!include trackselection.puml
 
 interface ControlDispatcher
 interface PlaybackPreparer
@@ -18,6 +19,8 @@ abstract class Timeline
 
 player <-- mediasource
 player <-- renderer
+player <-- loadcontrol
+player <-- trackselection
 mediasource <-- datasource
 mediasource <-- mediaperiod
 mediasource <-- extractor
@@ -25,5 +28,5 @@ mediaperiod <-- extractor
 renderer <-- stream
 renderer <-- decoder
 chunk <-- datasource
-player <-- loadcontrol
+trackselection <-- bandwidthmeter
 @enduml

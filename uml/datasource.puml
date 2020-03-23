@@ -15,9 +15,7 @@ package datasource {
     class DefaultHttpDataSource
     class DefaultDataSource
 
-    interface BandwidthMeter
     interface TransferListener
-    class DefaultBandwidthMeter
 
     DataSource <|-- CacheDataSource
     DataSource <|-- PriorityDataSource
@@ -31,9 +29,15 @@ package datasource {
     DataSource <|-- DefaultDataSource
     BaseDataSource <|-- DefaultHttpDataSource
     HttpDataSource <|-- DefaultHttpDataSource
+    BaseDataSource *-- TransferListener
+
+}
+
+package bandwidthmeter {
+    interface BandwidthMeter
+    class DefaultBandwidthMeter
 
     DefaultBandwidthMeter <|-- BandwidthMeter
     DefaultBandwidthMeter <|-- TransferListener
-
 }
 @enduml
