@@ -1,0 +1,18 @@
+
+@startuml
+'Decoder
+interface Decoder
+abstract class SimpleDecoder
+interface SubtitleDecoder
+class FfmpegDecoder
+class SimpleSubtitleDecoder
+class Mp4WebvttDecoder
+
+Decoder <-- SimpleDecoder
+Decoder <-- SubtitleDecoder
+SimpleDecoder <-- FfmpegDecoder
+SimpleDecoder <-- SimpleSubtitleDecoder
+SubtitleDecoder <-- SimpleSubtitleDecoder
+SimpleSubtitleDecoder <-- Mp4WebvttDecoder
+FfmpegAudioRenderer *-- FfmpegDecoder
+@enduml

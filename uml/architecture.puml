@@ -1,6 +1,7 @@
 
 @startuml
 
+!include decoder.puml
 
 'Player
 interface Player
@@ -35,15 +36,6 @@ class DefaultRenderersFactory {
     buildMiscellaneousRenderers()
 }
 
-'Decoder
-interface Decoder
-abstract class SimpleDecoder
-interface SubtitleDecoder
-class FfmpegDecoder
-class SimpleSubtitleDecoder
-'class FlacDecoder
-'class VpxDecoder
-
 interface LoadControl
 interface ControlDispatcher
 interface PlaybackPreparer
@@ -62,7 +54,6 @@ BaseRenderer <-- SimpleDecoderAudioRenderer
 SimpleDecoderAudioRenderer <--  FfmpegAudioRenderer
 SimpleDecoderAudioRenderer <--  LibflacAudioRenderer
 BaseRenderer <-- SimpleDecoderVideoRenderer
-'SimpleDecoderVideoRenderer <-- LibvpxVideoRenderer
 BaseRenderer <-- MediaCodecRenderer
 MediaCodecRenderer <-- MediaCodecAudioRenderer
 MediaClock <-- MediaCodecAudioRenderer
@@ -70,12 +61,4 @@ MediaCodecRenderer <-- MediaCodecVideoRenderer
 BaseRenderer <-- MetadataRenderer
 BaseRenderer <-- TextRenderer
 RenderersFactory <-- DefaultRenderersFactory
-
-SimpleDecoder <-- FfmpegDecoder
-SimpleDecoder <-- SimpleSubtitleDecoder
-SubtitleDecoder <-- SimpleSubtitleDecoder
-'SimpleDecoder <-- FlacDecoder
-'SimpleDecoder <-- VpxDecoder
-
-FfmpegAudioRenderer *-- FfmpegDecoder
 @enduml
