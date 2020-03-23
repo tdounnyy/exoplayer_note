@@ -8,8 +8,8 @@
 !include mediasource.puml
 !include datasource.puml
 !include source_misc.puml
+!include loadcontrol.puml
 
-interface LoadControl
 interface ControlDispatcher
 interface PlaybackPreparer
 interface MediaClock
@@ -25,4 +25,5 @@ mediaperiod <-- extractor
 renderer <-- stream
 renderer <-- decoder
 chunk <-- datasource
+player <-- loadcontrol
 @enduml

@@ -1,0 +1,9 @@
+@startuml
+'Controls buffering of media
+package loadcontrol{
+
+    interface LoadControl
+
+    class DefaultLoadControl
+}
+@enduml
