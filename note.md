@@ -19,7 +19,7 @@ Root project 'ExoPlayer'
 * +--- Project ':extension-jobdispatcher'
 * +--- Project ':extension-leanback'
 * +--- Project ':extension-mediasession'
-* +--- Project ':extension-okhttp'
+* +--- Project ':extension-okhttp' `The OkHttp extension is an HttpDataSource implementation using Square's OkHttp`
 * +--- Project ':extension-opus'
 * +--- Project ':extension-rtmp' `The RTMP extension is a DataSource implementation for playing RTMP streams using LibRtmp Client for Android`
 * +--- Project ':extension-vp9'
