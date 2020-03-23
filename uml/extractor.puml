@@ -2,24 +2,24 @@
 'Extracts media data from a container format
 package extractor {
 
-interface Extractor
-class FlvExtractor
-class Mp4Extractor
-class OggExtractor
-class TsExtractor
+    interface Extractor
+    class FlvExtractor
+    class Mp4Extractor
+    class OggExtractor
+    class TsExtractor
 
-interface ExtractorsFactory {
-    createExtractors()
-}
-class DefaultExtractorsFactory
+    interface ExtractorsFactory {
+        createExtractors()
+    }
+    class DefaultExtractorsFactory
 
-Extractor <|-- FlvExtractor
-Extractor <|-- Mp4Extractor
-Extractor <|-- OggExtractor
-Extractor <|-- TsExtractor
+    Extractor <|-- FlvExtractor
+    Extractor <|-- Mp4Extractor
+    Extractor <|-- OggExtractor
+    Extractor <|-- TsExtractor
 
-ExtractorsFactory <|-- DefaultExtractorsFactory
-ExtractorsFactory <-- Extractor
+    ExtractorsFactory <|-- DefaultExtractorsFactory
+    ExtractorsFactory <-- Extractor
 
 }
 @enduml

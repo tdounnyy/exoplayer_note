@@ -2,17 +2,17 @@
 'A stream of media samples (and associated format information)
 package stream{
 
-interface SampleStream
+    interface SampleStream
 
-class EmptySampleStream
-class HlsSampleStream
-class ChunkSampleStream
-class EventSampleStream
+    class EmptySampleStream
+    class HlsSampleStream
+    class ChunkSampleStream
+    class EventSampleStream
 
-SampleStream <|-- EmptySampleStream
-SampleStream <|-- HlsSampleStream
-SampleStream <|-- ChunkSampleStream
-SampleStream <|-- EventSampleStream
-SampleStream <-- DecoderInputBuffer
+    SampleStream <|-- EmptySampleStream
+    SampleStream <|-- HlsSampleStream
+    SampleStream <|-- ChunkSampleStream
+    SampleStream <|-- EventSampleStream
+    SampleStream <-- DecoderInputBuffer
 }
 @enduml

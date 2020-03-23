@@ -2,38 +2,38 @@
 'A component from which streams of data can be read
 package datasource {
 
-interface DataSource
-interface DataSource.Factory
-abstract class HttpDataSource
-abstract class BaseDataSource
-class CacheDataSource
-class PriorityDataSource
-class RtmpDataSource
-class FileDataSource
-class OkHttpDataSource
-class UdpDataSource
-class DefaultHttpDataSource
-class DefaultDataSource
+    interface DataSource
+    interface DataSource.Factory
+    abstract class HttpDataSource
+    abstract class BaseDataSource
+    class CacheDataSource
+    class PriorityDataSource
+    class RtmpDataSource
+    class FileDataSource
+    class OkHttpDataSource
+    class UdpDataSource
+    class DefaultHttpDataSource
+    class DefaultDataSource
 
-interface BandwidthMeter
-interface TransferListener
-class DefaultBandwidthMeter
+    interface BandwidthMeter
+    interface TransferListener
+    class DefaultBandwidthMeter
 
-DataSource <|-- CacheDataSource
-DataSource <|-- PriorityDataSource
-DataSource <|-- BaseDataSource
-DataSource <|-- HttpDataSource
-BaseDataSource <|-- RtmpDataSource
-BaseDataSource <|-- FileDataSource
-BaseDataSource <|-- OkHttpDataSource
-HttpDataSource <|-- OkHttpDataSource
-BaseDataSource <|-- UdpDataSource
-DataSource <|-- DefaultDataSource
-BaseDataSource <|-- DefaultHttpDataSource
-HttpDataSource <|-- DefaultHttpDataSource
+    DataSource <|-- CacheDataSource
+    DataSource <|-- PriorityDataSource
+    DataSource <|-- BaseDataSource
+    DataSource <|-- HttpDataSource
+    BaseDataSource <|-- RtmpDataSource
+    BaseDataSource <|-- FileDataSource
+    BaseDataSource <|-- OkHttpDataSource
+    HttpDataSource <|-- OkHttpDataSource
+    BaseDataSource <|-- UdpDataSource
+    DataSource <|-- DefaultDataSource
+    BaseDataSource <|-- DefaultHttpDataSource
+    HttpDataSource <|-- DefaultHttpDataSource
 
-DefaultBandwidthMeter <|-- BandwidthMeter
-DefaultBandwidthMeter <|-- TransferListener
+    DefaultBandwidthMeter <|-- BandwidthMeter
+    DefaultBandwidthMeter <|-- TransferListener
 
 }
 @enduml

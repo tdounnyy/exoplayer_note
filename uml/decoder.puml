@@ -3,40 +3,40 @@
 'A media decoder
 package decoder {
 
-interface Decoder
-abstract class SimpleDecoder
-interface SubtitleDecoder
-class FfmpegDecoder
-class SimpleSubtitleDecoder
-class Mp4WebvttDecoder
+    interface Decoder
+    abstract class SimpleDecoder
+    interface SubtitleDecoder
+    class FfmpegDecoder
+    class SimpleSubtitleDecoder
+    class Mp4WebvttDecoder
 
-Decoder <|-- SimpleDecoder
-Decoder <|-- SubtitleDecoder
-SimpleDecoder <|-- FfmpegDecoder
-SimpleDecoder <|-- SimpleSubtitleDecoder
-SubtitleDecoder <|-- SimpleSubtitleDecoder
-SimpleSubtitleDecoder <|-- Mp4WebvttDecoder
+    Decoder <|-- SimpleDecoder
+    Decoder <|-- SubtitleDecoder
+    SimpleDecoder <|-- FfmpegDecoder
+    SimpleDecoder <|-- SimpleSubtitleDecoder
+    SubtitleDecoder <|-- SimpleSubtitleDecoder
+    SimpleSubtitleDecoder <|-- Mp4WebvttDecoder
 }
 
 package buffer{
 
-'Buffer
-abstract class Buffer
-abstract class OutputBuffer
-class DecoderInputBuffer
-class VideoDecoderInputBuffer
-class SubtitleInputBuffer
-class SimpleOutputBuffer
-class VideoDecoderOutputBuffer
+    'Buffer
+    abstract class Buffer
+    abstract class OutputBuffer
+    class DecoderInputBuffer
+    class VideoDecoderInputBuffer
+    class SubtitleInputBuffer
+    class SimpleOutputBuffer
+    class VideoDecoderOutputBuffer
 
-Buffer <|-- OutputBuffer
-Buffer <|-- DecoderInputBuffer
-SimpleDecoder *-- OutputBuffer
-SimpleDecoder *-- DecoderInputBuffer
-DecoderInputBuffer <|-- VideoDecoderInputBuffer
-DecoderInputBuffer <|-- SubtitleInputBuffer
-OutputBuffer <|-- SimpleOutputBuffer
-OutputBuffer <|-- VideoDecoderOutputBuffer
+    Buffer <|-- OutputBuffer
+    Buffer <|-- DecoderInputBuffer
+    SimpleDecoder *-- OutputBuffer
+    SimpleDecoder *-- DecoderInputBuffer
+    DecoderInputBuffer <|-- VideoDecoderInputBuffer
+    DecoderInputBuffer <|-- SubtitleInputBuffer
+    OutputBuffer <|-- SimpleOutputBuffer
+    OutputBuffer <|-- VideoDecoderOutputBuffer
 }
 
 decoder <-- buffer

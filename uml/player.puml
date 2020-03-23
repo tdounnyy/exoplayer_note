@@ -3,19 +3,19 @@
 'A media player interface defining traditional high-level functionality, such as the ability to play, pause, seek and query properties of the currently playing media.
 package player {
 
-interface Player
-interface ExoPlayer
-abstract class BasePlayer
-class SimpleExoPlayer
-class ExoPlayerImpl
-class ExoPlayerImplInternal
+    interface Player
+    interface ExoPlayer
+    abstract class BasePlayer
+    class SimpleExoPlayer
+    class ExoPlayerImpl
+    class ExoPlayerImplInternal
 
-Player <|-- ExoPlayer
-Player <|-- BasePlayer
-BasePlayer <|-- SimpleExoPlayer
-ExoPlayer <|-- SimpleExoPlayer
-BasePlayer <|-- ExoPlayerImpl
-ExoPlayerImpl *-- ExoPlayerImplInternal
+    Player <|-- ExoPlayer
+    Player <|-- BasePlayer
+    BasePlayer <|-- SimpleExoPlayer
+    ExoPlayer <|-- SimpleExoPlayer
+    BasePlayer <|-- ExoPlayerImpl
+    ExoPlayerImpl *-- ExoPlayerImplInternal
 
 }
 @enduml
