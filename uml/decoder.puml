@@ -15,4 +15,22 @@ SimpleDecoder <-- SimpleSubtitleDecoder
 SubtitleDecoder <-- SimpleSubtitleDecoder
 SimpleSubtitleDecoder <-- Mp4WebvttDecoder
 FfmpegAudioRenderer *-- FfmpegDecoder
+
+'Buffer
+abstract class Buffer
+abstract class OutputBuffer
+class DecoderInputBuffer
+class VideoDecoderInputBuffer
+class SubtitleInputBuffer
+class SimpleOutputBuffer
+class VideoDecoderOutputBuffer
+
+Buffer <-- OutputBuffer
+Buffer <-- DecoderInputBuffer
+SimpleDecoder *-- OutputBuffer
+SimpleDecoder *-- DecoderInputBuffer
+DecoderInputBuffer <-- VideoDecoderInputBuffer
+DecoderInputBuffer <-- SubtitleInputBuffer
+OutputBuffer <-- SimpleOutputBuffer
+OutputBuffer <-- VideoDecoderOutputBuffer
 @enduml
