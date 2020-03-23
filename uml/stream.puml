@@ -1,0 +1,17 @@
+@startuml
+'A stream of media samples (and associated format information)
+package stream{
+
+interface SampleStream
+
+class EmptySampleStream
+class HlsSampleStream
+class ChunkSampleStream
+class EventSampleStream
+
+SampleStream <|-- EmptySampleStream
+SampleStream <|-- HlsSampleStream
+SampleStream <|-- ChunkSampleStream
+SampleStream <|-- EventSampleStream
+}
+@enduml
