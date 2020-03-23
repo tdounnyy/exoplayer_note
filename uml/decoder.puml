@@ -8,12 +8,12 @@ class FfmpegDecoder
 class SimpleSubtitleDecoder
 class Mp4WebvttDecoder
 
-Decoder <-- SimpleDecoder
-Decoder <-- SubtitleDecoder
-SimpleDecoder <-- FfmpegDecoder
-SimpleDecoder <-- SimpleSubtitleDecoder
-SubtitleDecoder <-- SimpleSubtitleDecoder
-SimpleSubtitleDecoder <-- Mp4WebvttDecoder
+Decoder <|-- SimpleDecoder
+Decoder <|-- SubtitleDecoder
+SimpleDecoder <|-- FfmpegDecoder
+SimpleDecoder <|-- SimpleSubtitleDecoder
+SubtitleDecoder <|-- SimpleSubtitleDecoder
+SimpleSubtitleDecoder <|-- Mp4WebvttDecoder
 FfmpegAudioRenderer *-- FfmpegDecoder
 
 'Buffer
@@ -25,12 +25,12 @@ class SubtitleInputBuffer
 class SimpleOutputBuffer
 class VideoDecoderOutputBuffer
 
-Buffer <-- OutputBuffer
-Buffer <-- DecoderInputBuffer
+Buffer <|-- OutputBuffer
+Buffer <|-- DecoderInputBuffer
 SimpleDecoder *-- OutputBuffer
 SimpleDecoder *-- DecoderInputBuffer
-DecoderInputBuffer <-- VideoDecoderInputBuffer
-DecoderInputBuffer <-- SubtitleInputBuffer
-OutputBuffer <-- SimpleOutputBuffer
-OutputBuffer <-- VideoDecoderOutputBuffer
+DecoderInputBuffer <|-- VideoDecoderInputBuffer
+DecoderInputBuffer <|-- SubtitleInputBuffer
+OutputBuffer <|-- SimpleOutputBuffer
+OutputBuffer <|-- VideoDecoderOutputBuffer
 @enduml

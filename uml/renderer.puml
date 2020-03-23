@@ -23,18 +23,18 @@ class DefaultRenderersFactory {
     buildMiscellaneousRenderers()
 }
 
-Renderer <-- BaseRenderer
-RendererCapabilities <-- BaseRenderer
-BaseRenderer <-- CameraMotionRenderer
-BaseRenderer <-- SimpleDecoderAudioRenderer
-SimpleDecoderAudioRenderer <--  FfmpegAudioRenderer
-SimpleDecoderAudioRenderer <--  LibflacAudioRenderer
-BaseRenderer <-- SimpleDecoderVideoRenderer
-BaseRenderer <-- MediaCodecRenderer
-MediaCodecRenderer <-- MediaCodecAudioRenderer
-MediaClock <-- MediaCodecAudioRenderer
-MediaCodecRenderer <-- MediaCodecVideoRenderer
-BaseRenderer <-- MetadataRenderer
-BaseRenderer <-- TextRenderer
-RenderersFactory <-- DefaultRenderersFactory
+Renderer <|-- BaseRenderer
+RendererCapabilities <|-- BaseRenderer
+BaseRenderer <|-- CameraMotionRenderer
+BaseRenderer <|-- SimpleDecoderAudioRenderer
+SimpleDecoderAudioRenderer <|--  FfmpegAudioRenderer
+SimpleDecoderAudioRenderer <|--  LibflacAudioRenderer
+BaseRenderer <|-- SimpleDecoderVideoRenderer
+BaseRenderer <|-- MediaCodecRenderer
+MediaCodecRenderer <|-- MediaCodecAudioRenderer
+MediaClock <|-- MediaCodecAudioRenderer
+MediaCodecRenderer <|-- MediaCodecVideoRenderer
+BaseRenderer <|-- MetadataRenderer
+BaseRenderer <|-- TextRenderer
+RenderersFactory <|-- DefaultRenderersFactory
 @enduml
