@@ -1,0 +1,31 @@
+@startuml
+
+'A flexible representation of the structure of media
+package timeline {
+
+    abstract class Timeline
+    'Holds information about a window in a {@link Timeline}
+    class Window
+    'Holds information about a period in a {@link Timeline}
+    class Period
+    abstract class ForwardingTimeline
+    class SinglePeriodAdTimeline
+    class ClippingTimeline
+    abstract class AbstractConcatenatedTimeline
+    class SinglePeriodTimeline
+    class ConcatenatedTimeline
+    class LoopingTimeline
+
+    class DashTimeline
+
+    Timeline <|-- DashTimeline
+    Timeline <|-- ForwardingTimeline
+    Timeline <|-- AbstractConcatenatedTimeline
+    Timeline <|-- SinglePeriodTimeline
+    ForwardingTimeline <|-- SinglePeriodAdTimeline
+    ForwardingTimeline <|-- ClippingTimeline
+    AbstractConcatenatedTimeline <|-- ConcatenatedTimeline
+    AbstractConcatenatedTimeline <|-- LoopingTimeline
+
+}
+@enduml

@@ -10,6 +10,7 @@ package mediasource{
     class SingleSampleMediaSource
     class ProgressiveMediaSource
     class DashMediaSource
+    class ClippingMediaSource
     class ExtractorMediaSource
 
     MediaSource <|-- BaseMediaSource
@@ -19,6 +20,7 @@ package mediasource{
     BaseMediaSource <|-- DashMediaSource
     BaseMediaSource <|-- CompositeMediaSource
     CompositeMediaSource <|-- ExtractorMediaSource
+    CompositeMediaSource <|-- ClippingMediaSource
 
 }
 @enduml

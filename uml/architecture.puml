@@ -10,11 +10,11 @@
 !include source_misc.puml
 !include loadcontrol.puml
 !include trackselection.puml
+!include timeline.puml
 
 interface ControlDispatcher
 interface PlaybackPreparer
 interface MediaClock
-abstract class Timeline
 
 
 player <-- mediasource
@@ -23,6 +23,7 @@ player <-- loadcontrol
 player <-- trackselection
 mediasource <-- datasource
 mediasource <-- mediaperiod
+mediasource <-- timeline
 mediasource <-- extractor
 mediaperiod <-- extractor
 renderer <-- stream
