@@ -1,12 +1,12 @@
-
 @startuml
-!include renderer.puml
-!include decoder.puml
+
 !include player.puml
-!include extractor.puml
-!include stream.puml
+!include renderer.puml
 !include mediasource.puml
 !include datasource.puml
+!include decoder.puml
+!include extractor.puml
+!include stream.puml
 !include source_misc.puml
 !include loadcontrol.puml
 !include trackselection.puml
@@ -17,17 +17,19 @@ interface PlaybackPreparer
 interface MediaClock
 
 
-player <-- mediasource
-player <-- renderer
-player <-- loadcontrol
-player <-- trackselection
+player <-up- mediasource
+player <-up- renderer
+player <-up- loadcontrol
+player <-up- trackselection
+player <-up- mediasource
 mediasource <-- datasource
 mediasource <-- mediaperiod
 mediasource <-- timeline
 mediasource <-- extractor
 mediaperiod <-- extractor
-renderer <-- stream
+renderer <-up- stream
 renderer <-- decoder
 chunk <-- datasource
 trackselection <-- bandwidthmeter
+
 @enduml

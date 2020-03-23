@@ -13,6 +13,5 @@ package stream{
     SampleStream <|-- HlsSampleStream
     SampleStream <|-- ChunkSampleStream
     SampleStream <|-- EventSampleStream
-    SampleStream <-- DecoderInputBuffer
 }
 @enduml
