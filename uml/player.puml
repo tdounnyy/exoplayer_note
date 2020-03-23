@@ -1,14 +1,27 @@
 
 @startuml
-'A media player interface defining traditional high-level functionality, such as the ability to play, pause, seek and query properties of the currently playing media.
 package player {
 
+    'A media player interface defining traditional high-level functionality, such as the ability to play, pause, seek and query properties of the currently playing media.
     interface Player
+
+    'An extensible media player that plays {@link MediaSource}
     interface ExoPlayer
+
+    'Abstract base {@link Player} which implements common implementation independent methods
     abstract class BasePlayer
+
+    'An {@link ExoPlayer} implementation that uses default {@link Renderer} components
     class SimpleExoPlayer
     class ExoPlayerImpl
+    'Implements the internal behavior of {@link ExoPlayerImpl}
     class ExoPlayerImplInternal
+
+    interface AudioComponent
+    interface VideoComponent
+    interface TextComponent
+    interface MetadataComponent
+    interface EventListener
 
     Player <|-- ExoPlayer
     Player <|-- BasePlayer

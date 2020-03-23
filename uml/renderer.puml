@@ -3,9 +3,14 @@
 'Renders media read from a {@link SampleStream}
 package renderer {
 
+    'Renders media read from a {@link SampleStream}
     interface Renderer
+
+    'Defines the capabilities of a Renderer
     interface RendererCapabilities
     interface RenderersFactory
+
+    'An abstract base class suitable for most Renderer implementations
     abstract class BaseRenderer
     abstract class SimpleDecoderAudioRenderer
     abstract class SimpleDecoderVideoRenderer

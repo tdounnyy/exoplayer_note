@@ -20,7 +20,7 @@ package decoder {
 
 package buffer{
 
-    'Buffer
+    'Base class for buffers with flags.
     abstract class Buffer
     abstract class OutputBuffer
     class DecoderInputBuffer
