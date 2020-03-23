@@ -1,0 +1,20 @@
+@startuml
+
+package Player
+package MediaSource
+package DataSource
+package Renderer
+package Stream
+package Decoder
+package Buffer
+package MediaCodec
+
+Player <-- MediaSource
+Player <-- DataSource
+Player <-- Renderer
+
+Renderer <-- Stream
+Renderer <-- Decoder
+Renderer <-- MediaCodec
+Decoder <-- Buffer
+@enduml
