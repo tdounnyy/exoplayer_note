@@ -1,0 +1,48 @@
+@startuml
+
+'An object that can be loaded using a {@link Loader}
+interface Loadable
+
+'An abstract base class for {@link Loadable} implementations that load chunks of data required for the playback of streams
+package chunk {
+    abstract class Chunk
+    abstract class DataChunk
+    abstract class MediaChunk
+    abstract class BaseMediaChunk
+
+    class InitializationChunk
+    class HlsMediaChunk
+    class ContainerMediaChunk
+    class SingleSampleMediaChunk
+
+    'A provider of {@link Chunk}s for a {@link ChunkSampleStream} to load
+    interface ChunkSource
+
+
+    'A {@link SampleStream} that loads media in {@link Chunk}s, obtained from a {@link ChunkSource}
+    class ChunkSampleStream
+
+    Loadable <|-- Chunk
+    Chunk <|-- InitializationChunk
+    Chunk <|-- DataChunk
+    Chunk <|-- MediaChunk
+    MediaChunk <|-- BaseMediaChunk
+    MediaChunk <|-- HlsMediaChunk
+    BaseMediaChunk <|-- ContainerMediaChunk
+    BaseMediaChunk <|-- SingleSampleMediaChunk
+
+}
+
+'A loader that can proceed in approximate synchronization with other loaders
+interface SequenceableLoader
+
+'Loads media corresponding to a {@link Timeline.Period}, and allows that media to be read.
+package mediaperiod {
+    interface MediaPeriod
+
+    class HlsMediaPeriod
+
+    MediaPeriod <|-- HlsMediaPeriod
+    SequenceableLoader <|-- MediaPeriod
+}
+@enduml
