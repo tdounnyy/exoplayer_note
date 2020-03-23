@@ -1,0 +1,14 @@
+
+@startuml
+'Player
+interface Player
+interface ExoPlayer
+abstract class BasePlayer
+class SimpleExoPlayer
+
+Player <-- ExoPlayer
+Player <-- BasePlayer
+BasePlayer <-- SimpleExoPlayer
+ExoPlayer <-- SimpleExoPlayer
+
+@enduml

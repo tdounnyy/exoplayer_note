@@ -1,24 +1,13 @@
 
 @startuml
-
 !include renderer.puml
 !include decoder.puml
-
-'Player
-interface Player
-interface ExoPlayer
-abstract class BasePlayer
-class SimpleExoPlayer
+!include player.puml
 
 interface LoadControl
 interface ControlDispatcher
 interface PlaybackPreparer
 interface MediaClock
 abstract class Timeline
-
-Player <-- ExoPlayer
-Player <-- BasePlayer
-BasePlayer <-- SimpleExoPlayer
-ExoPlayer <-- SimpleExoPlayer
 
 @enduml

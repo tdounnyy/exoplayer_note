@@ -1,6 +1,5 @@
 
 @startuml
-
 'Renderer
 interface Renderer
 interface RendererCapabilities
