@@ -1,0 +1,21 @@
+
+@startuml
+
+interface Player
+interface ExoPlayer
+interface Renderer
+abstract class BaseRenderer
+interface RendererCapabilities
+interface RenderersFactory
+interface LoadControl
+interface ControlDispatcher
+interface PlaybackPreparer
+abstract class Timeline
+abstract class BasePlayer
+
+
+Player <-- ExoPlayer
+Player <-- BasePlayer
+Renderer <-- BaseRenderer
+RendererCapabilities <-- BaseRenderer
+@enduml
