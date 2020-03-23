@@ -1,0 +1,41 @@
+
+@startuml
+
+'Renderer
+interface Renderer
+interface RendererCapabilities
+interface RenderersFactory
+abstract class BaseRenderer
+abstract class SimpleDecoderAudioRenderer
+abstract class SimpleDecoderVideoRenderer
+abstract class MediaCodecRenderer
+class CameraMotionRenderer
+class FfmpegAudioRenderer
+class MediaCodecAudioRenderer
+class MediaCodecVideoRenderer
+class MetadataRenderer
+class TextRenderer
+class DefaultRenderersFactory {
+    createRenderers()
+    buildVideoRenderers()
+    buildAudioRenderers()
+    buildTextRenderers()
+    buildCameraMotionRenderers()
+    buildMiscellaneousRenderers()
+}
+
+Renderer <-- BaseRenderer
+RendererCapabilities <-- BaseRenderer
+BaseRenderer <-- CameraMotionRenderer
+BaseRenderer <-- SimpleDecoderAudioRenderer
+SimpleDecoderAudioRenderer <--  FfmpegAudioRenderer
+SimpleDecoderAudioRenderer <--  LibflacAudioRenderer
+BaseRenderer <-- SimpleDecoderVideoRenderer
+BaseRenderer <-- MediaCodecRenderer
+MediaCodecRenderer <-- MediaCodecAudioRenderer
+MediaClock <-- MediaCodecAudioRenderer
+MediaCodecRenderer <-- MediaCodecVideoRenderer
+BaseRenderer <-- MetadataRenderer
+BaseRenderer <-- TextRenderer
+RenderersFactory <-- DefaultRenderersFactory
+@enduml
