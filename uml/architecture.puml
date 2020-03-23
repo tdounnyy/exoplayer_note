@@ -5,6 +5,7 @@
 !include player.puml
 !include extractor.puml
 !include stream.puml
+!include mediasource.puml
 
 interface LoadControl
 interface ControlDispatcher

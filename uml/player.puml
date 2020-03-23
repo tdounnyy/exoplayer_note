@@ -7,11 +7,15 @@ interface Player
 interface ExoPlayer
 abstract class BasePlayer
 class SimpleExoPlayer
+class ExoPlayerImpl
+class ExoPlayerImplInternal
 
 Player <|-- ExoPlayer
 Player <|-- BasePlayer
 BasePlayer <|-- SimpleExoPlayer
 ExoPlayer <|-- SimpleExoPlayer
+BasePlayer <|-- ExoPlayerImpl
+ExoPlayerImpl *-- ExoPlayerImplInternal
 
 }
 @enduml

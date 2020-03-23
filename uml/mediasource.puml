@@ -1,0 +1,24 @@
+@startuml
+'Defines and provides media to be played by an {@link com.google.android.exoplayer2.ExoPlayer}
+package mediasource{
+
+interface MediaSource
+abstract class BaseMediaSource
+abstract class CompositeMediaSource
+
+class HlsMediaSource
+class SingleSampleMediaSource
+class ProgressiveMediaSource
+class DashMediaSource
+
+MediaSource <|-- BaseMediaSource
+BaseMediaSource <|-- HlsMediaSource
+BaseMediaSource <|-- SingleSampleMediaSource
+BaseMediaSource <|-- ProgressiveMediaSource
+BaseMediaSource <|-- DashMediaSource
+BaseMediaSource <|-- CompositeMediaSource
+
+ExoPlayerImplInternal *-- MediaSource
+
+}
+@enduml
