@@ -1,0 +1,21 @@
+@startuml
+'Extracts media data from a container format
+interface Extractor
+class FlvExtractor
+class Mp4Extractor
+class OggExtractor
+class TsExtractor
+
+interface ExtractorsFactory {
+    createExtractors()
+}
+class DefaultExtractorsFactory
+
+Extractor <|-- FlvExtractor
+Extractor <|-- Mp4Extractor
+Extractor <|-- OggExtractor
+Extractor <|-- TsExtractor
+
+ExtractorsFactory <|-- DefaultExtractorsFactory
+ExtractorsFactory <-- Extractor
+@enduml
