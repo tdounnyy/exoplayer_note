@@ -16,7 +16,6 @@ SimpleDecoder <|-- FfmpegDecoder
 SimpleDecoder <|-- SimpleSubtitleDecoder
 SubtitleDecoder <|-- SimpleSubtitleDecoder
 SimpleSubtitleDecoder <|-- Mp4WebvttDecoder
-FfmpegAudioRenderer *-- FfmpegDecoder
 }
 
 package buffer{
@@ -38,6 +37,7 @@ DecoderInputBuffer <|-- VideoDecoderInputBuffer
 DecoderInputBuffer <|-- SubtitleInputBuffer
 OutputBuffer <|-- SimpleOutputBuffer
 OutputBuffer <|-- VideoDecoderOutputBuffer
-
 }
+
+decoder <-- buffer
 @enduml

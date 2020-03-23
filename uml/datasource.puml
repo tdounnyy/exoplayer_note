@@ -35,6 +35,5 @@ HttpDataSource <|-- DefaultHttpDataSource
 DefaultBandwidthMeter <|-- BandwidthMeter
 DefaultBandwidthMeter <|-- TransferListener
 
-ExoPlayer *-- DefaultBandwidthMeter
 }
 @enduml

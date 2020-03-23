@@ -10,6 +10,7 @@ class HlsMediaSource
 class SingleSampleMediaSource
 class ProgressiveMediaSource
 class DashMediaSource
+class ExtractorMediaSource
 
 MediaSource <|-- BaseMediaSource
 BaseMediaSource <|-- HlsMediaSource
@@ -17,8 +18,7 @@ BaseMediaSource <|-- SingleSampleMediaSource
 BaseMediaSource <|-- ProgressiveMediaSource
 BaseMediaSource <|-- DashMediaSource
 BaseMediaSource <|-- CompositeMediaSource
-
-ExoPlayerImplInternal *-- MediaSource
+CompositeMediaSource <|-- ExtractorMediaSource
 
 }
 @enduml

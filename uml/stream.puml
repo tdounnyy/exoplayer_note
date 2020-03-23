@@ -13,5 +13,6 @@ SampleStream <|-- EmptySampleStream
 SampleStream <|-- HlsSampleStream
 SampleStream <|-- ChunkSampleStream
 SampleStream <|-- EventSampleStream
+SampleStream <-- DecoderInputBuffer
 }
 @enduml

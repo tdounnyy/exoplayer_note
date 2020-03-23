@@ -14,4 +14,10 @@ interface PlaybackPreparer
 interface MediaClock
 abstract class Timeline
 
+
+player <-- mediasource
+player <-- renderer
+mediasource <-- datasource
+renderer <-- stream
+renderer <-- decoder
 @enduml
