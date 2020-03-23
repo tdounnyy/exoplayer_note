@@ -18,10 +18,10 @@ abstract class SimpleDecoderVideoRenderer
 abstract class MediaCodecRenderer
 class CameraMotionRenderer
 class FfmpegAudioRenderer
-class LibflacAudioRenderer
-class LibvpxVideoRenderer
-class LibvpxVideoRenderer
-class LibvpxVideoRenderer
+'class LibflacAudioRenderer
+'class LibvpxVideoRenderer
+'class LibvpxVideoRenderer
+'class LibvpxVideoRenderer
 class MediaCodecAudioRenderer
 class MediaCodecVideoRenderer
 class MetadataRenderer
@@ -34,6 +34,15 @@ class DefaultRenderersFactory {
     buildCameraMotionRenderers()
     buildMiscellaneousRenderers()
 }
+
+'Decoder
+interface Decoder
+abstract class SimpleDecoder
+interface SubtitleDecoder
+class FfmpegDecoder
+class SimpleSubtitleDecoder
+'class FlacDecoder
+'class VpxDecoder
 
 interface LoadControl
 interface ControlDispatcher
@@ -53,7 +62,7 @@ BaseRenderer <-- SimpleDecoderAudioRenderer
 SimpleDecoderAudioRenderer <--  FfmpegAudioRenderer
 SimpleDecoderAudioRenderer <--  LibflacAudioRenderer
 BaseRenderer <-- SimpleDecoderVideoRenderer
-SimpleDecoderVideoRenderer <-- LibvpxVideoRenderer
+'SimpleDecoderVideoRenderer <-- LibvpxVideoRenderer
 BaseRenderer <-- MediaCodecRenderer
 MediaCodecRenderer <-- MediaCodecAudioRenderer
 MediaClock <-- MediaCodecAudioRenderer
@@ -62,5 +71,11 @@ BaseRenderer <-- MetadataRenderer
 BaseRenderer <-- TextRenderer
 RenderersFactory <-- DefaultRenderersFactory
 
+SimpleDecoder <-- FfmpegDecoder
+SimpleDecoder <-- SimpleSubtitleDecoder
+SubtitleDecoder <-- SimpleSubtitleDecoder
+'SimpleDecoder <-- FlacDecoder
+'SimpleDecoder <-- VpxDecoder
 
+FfmpegAudioRenderer *-- FfmpegDecoder
 @enduml
