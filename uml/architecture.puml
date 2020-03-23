@@ -3,6 +3,8 @@
 !include renderer.puml
 !include decoder.puml
 !include player.puml
+!include extractor.puml
+!include stream.puml
 
 interface LoadControl
 interface ControlDispatcher

@@ -1,6 +1,8 @@
 
 @startuml
-'Renderer
+'Renders media read from a {@link SampleStream}
+package renderer {
+
 interface Renderer
 interface RendererCapabilities
 interface RenderersFactory
@@ -37,4 +39,6 @@ MediaCodecRenderer <|-- MediaCodecVideoRenderer
 BaseRenderer <|-- MetadataRenderer
 BaseRenderer <|-- TextRenderer
 RenderersFactory <|-- DefaultRenderersFactory
+
+}
 @enduml

@@ -1,6 +1,8 @@
 
 @startuml
-'Decoder
+'A media decoder
+package decoder {
+
 interface Decoder
 abstract class SimpleDecoder
 interface SubtitleDecoder
@@ -15,6 +17,9 @@ SimpleDecoder <|-- SimpleSubtitleDecoder
 SubtitleDecoder <|-- SimpleSubtitleDecoder
 SimpleSubtitleDecoder <|-- Mp4WebvttDecoder
 FfmpegAudioRenderer *-- FfmpegDecoder
+}
+
+package buffer{
 
 'Buffer
 abstract class Buffer
@@ -33,4 +38,6 @@ DecoderInputBuffer <|-- VideoDecoderInputBuffer
 DecoderInputBuffer <|-- SubtitleInputBuffer
 OutputBuffer <|-- SimpleOutputBuffer
 OutputBuffer <|-- VideoDecoderOutputBuffer
+
+}
 @enduml

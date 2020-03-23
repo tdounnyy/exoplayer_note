@@ -1,5 +1,7 @@
 @startuml
 'Extracts media data from a container format
+package extractor {
+
 interface Extractor
 class FlvExtractor
 class Mp4Extractor
@@ -18,4 +20,6 @@ Extractor <|-- TsExtractor
 
 ExtractorsFactory <|-- DefaultExtractorsFactory
 ExtractorsFactory <-- Extractor
+
+}
 @enduml
